@@ -1,0 +1,33 @@
+{
+  "name": "@hycord/render",
+  "module": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "types": "./src/index.ts",
+      "default": "./build/index.js"
+    }
+  },
+  "version": "0.0.4",
+  "private": false,
+  "type": "module",
+  "files": [
+    "build",
+    "src"
+  ],
+  "publishConfig": {
+    "tag": "next",
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun run clean && bun build ./src/index.ts --outdir ./build",
+    "clean": "rm -rf build",
+    "prepack": "bun run build"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

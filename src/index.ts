@@ -1,5 +1,1 @@
-export default class Viewport {
-    constructor(){
-        console.log("Viewport initialized");
-    }
-}
+export * as Math from "./Math"

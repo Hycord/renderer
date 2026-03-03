@@ -47,7 +47,7 @@ import {
   QuadraticBezier3D,
   CatmullRomSegment,
   CatmullRomChain,
-} from "../Math";
+} from "@hycord/math";
 
 // ═══════════════════════════════════════════════════════════════
 //  Helper
@@ -319,20 +319,20 @@ const fromHSL = Color.core.hsl(0.6, 0.7, 0.5);
 console.log("From HSL(0.6, 0.7, 0.5):", fromHSL.toRGBAString());
 console.log("  → back to HSL:", fromHSL.toHSL());
 
-const blended = Color.core.colors.red.lerp(Color.core.colors.blue, 0.5);
+const blended = Color.core.colors.red().lerp(Color.core.colors.blue(), 0.5);
 console.log("\nLerp red → blue at 0.5:", blended.toRGBAString());
 
-const multiplied = Color.core.colors.white.multiply(Color.core.colors.green);
+const multiplied = Color.core.colors.white().multiply(Color.core.colors.green());
 console.log("White × Green:", multiplied.toRGBAString());
 
-const added = Color.core.colors.red.add(Color.core.colors.blue);
+const added = Color.core.colors.red().add(Color.core.colors.blue());
 console.log("Red + Blue:", added.toRGBAString());
 
 console.log("\nAs Vector4D:", red.toVec4().toString());
 
 console.log("\nPredefined colors:");
-for (const [name, color] of Object.entries(Color.core.colors)) {
-  console.log(`  ${name}: ${color.toHexString()}`);
+for (const [name, color] of Object.entries(Color.core.colors)){
+  console.log(`  ${name}: ${color().toHexString()}`);
 }
 
 // ═══════════════════════════════════════════════════════════════
